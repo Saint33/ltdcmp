@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Input from './input'
+import Button from '../../shared/button'
+
 const FormWrapper = styled.section`
   display: flex;
   justify-content: center;
@@ -16,6 +19,7 @@ const Form = styled.form`
   width: 600px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `
 
 const FormRow = styled.div`
@@ -28,38 +32,6 @@ const FormRow = styled.div`
   }
   &:last-child {
     margin-bottom: 0;
-  }
-`
-
-const Label = styled.label`
-  position: absolute;
-  left: 0;
-  top: 5px;
-  font-size: 16px;
-  color: #23252c;
-  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-`
-
-const Input = styled.input`
-  height: 38px;
-  border: none;
-  border-bottom: 1px solid grey;
-  width: 100%;
-  font-size: 16px;
-  padding: 10px 0;
-  &:focus {
-    outline: none;
-    &+label {
-      transform: translate(0, -30px);
-    }
-  }
-`
-
-const InputWrapper = styled.div`
-  width: 50%;
-  position: relative;
-  &:first-child {
-    padding-right: 20px;
   }
 `
 
@@ -81,26 +53,29 @@ const FormTextArea = styled.textarea`
 class ContactForm extends React.Component {
 
   state = {
-
+    name: '',
+    email: ''
   }
 
   textarea = React.createRef();
 
-  componentDidMount (){
-    console.log(this.textarea);
-    this.textarea.current.addEventListener('keydown', this.autosize)
+  handleNameChange = e => {
+    this.setState({ name: e.target.value })
   }
 
-  componentWillUnmount() {
-    this.textarea.current.removeEventListener('keydown', this.autosize)
+  handleEmailChange = e => {
+    this.setState({ email: e.target.value })
   }
-  
+
   autosize = () => {
     const textarea = this.textarea.current;
     textarea.style.cssText = 'height:auto; padding:0';
-    textarea.style.cssText = 'height:' + textarea.scrollHeight + 'px';
+    textarea.style.cssText = 'height:' + (textarea.scrollHeight + 20) + 'px';
   }
 
+  submitForm = e => {
+    e.preventDefault();
+  }
   render() {
     return (
       <FormWrapper>
@@ -109,29 +84,27 @@ class ContactForm extends React.Component {
         </FormTitle>
         <Form>
           <FormRow>
-            <InputWrapper>
-              <Input
-                type="text"
-                id="name" />
-              <Label htmlFor="name">
-                Your name
-              </Label>
-            </InputWrapper>
-            <InputWrapper>
-              <Input
-                type="text"
-                id="name" />
-              <Label htmlFor="name">
-                Your name
-              </Label>
-            </InputWrapper>
+            <Input
+              type="text"
+              label="Name" 
+              handler={this.handleNameChange}
+              valid={this.state.name.length > 1} 
+              value={this.state.name} />
+            <Input
+              type="email"
+              label="Email" 
+              handler={this.handleEmailChange}
+              valid={this.state.email.length > 5} 
+              value={this.state.email}/>
           </FormRow>
           <FormRow>
-            <Label>
-              Message or question
-            </Label>
-            <FormTextArea ref={this.textarea}/>
+            <FormTextArea 
+              ref={this.textarea} 
+              onKeyDown={this.autosize}/>
           </FormRow>
+          <Button handler={this.submitForm}>
+            Send
+          </Button>
         </Form>
       </FormWrapper>
     )
