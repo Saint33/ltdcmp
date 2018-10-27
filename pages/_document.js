@@ -14,8 +14,14 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {this.props.styleTags}
+          <title>LTDCMP</title>
+          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></link>
         </Head>
-        <body>
+        <body style={{
+          margin: 0,
+          fontFamily: 'Roboto',
+          boxSizing: 'border-box'
+        }}>
           <Main />
           <NextScript />
         </body>
