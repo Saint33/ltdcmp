@@ -8,21 +8,22 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   padding: 0 40px;
   height: 60px;
+  background-color: black;
 `
 
 const HeaderLogo = styled.div`
-  color: white;
+  color: #FFD700;
   font-size: 25px;
 `
 
 const HeaderLink = styled.span`
-  color: white;
+  color: #FFD700;
   font-size: 20px;
   transition: 0.2s;
   cursor: pointer;
   margin-right: 40px;
   &:hover {
-    color: blue;
+    color: #CCAC00;
   }
   &:last-child {
     margin-right: 0;
