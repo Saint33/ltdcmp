@@ -76,7 +76,9 @@ class ContactForm extends React.Component {
   submitForm = e => {
     e.preventDefault();
   }
+
   render() {
+    let { name, email } = this.state;
     return (
       <FormWrapper>
         <FormTitle>
@@ -88,11 +90,25 @@ class ContactForm extends React.Component {
               type="text"
               label="Name" 
               handler={this.handleNameChange}
-              valid={this.state.name.length > 1} 
-              value={this.state.name} />
+              valid={name.length > 1} 
+              value={name} />
             <Input
               type="email"
               label="Email" 
+              handler={this.handleEmailChange}
+              valid={email.length > 5} 
+              value={email}/>
+          </FormRow>
+          <FormRow>
+            <Input
+              type="tel"
+              label="Phone number (optional)" 
+              handler={this.handleNameChange}
+              valid={this.state.name.length > 1} 
+              value={this.state.name} />
+            <Input
+              type="tel"
+              label="Budget (optional)" 
               handler={this.handleEmailChange}
               valid={this.state.email.length > 5} 
               value={this.state.email}/>

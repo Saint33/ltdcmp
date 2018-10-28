@@ -8,7 +8,12 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   padding: 0 40px;
   height: 60px;
-  background-color: black;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
 `
 
 const HeaderLogo = styled.div`

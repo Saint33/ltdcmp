@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types'
 
 const Label = styled.label`
   position: absolute;
@@ -82,5 +83,13 @@ const InputWrapper = ({ handler, value, label, type, valid }) => (
     </svg>
   </Wrapper>
 )
+
+InputWrapper.propTypes = {
+  handler: PropTypes.func,
+  value: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.string,
+  valid: PropTypes.bool
+}
 
 export default InputWrapper;
