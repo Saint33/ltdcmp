@@ -15,13 +15,10 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {this.props.styleTags}
-          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet" />
         </Head>
-        <body style={{
-          margin: 0,
-          fontFamily: 'Roboto',
-          boxSizing: 'border-box'
-        }}>
+        <body>
           <div id="modal"/>
           <Main />
           <NextScript />

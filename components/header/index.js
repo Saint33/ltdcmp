@@ -45,7 +45,7 @@ const Header = () => (
       LTDCMP
     </HeaderLogo>
     <HeaderNavigation>
-      <Link href="/">
+      <Link href="/" replace>
         <HeaderLink>
           Home
         </HeaderLink>

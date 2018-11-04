@@ -22,17 +22,20 @@ const Slogan = styled.div`
     align-items: center;
 `
 
-const DummyRectangle = styled.div`
-  width: 300px;
-  height: 300px;
-  background-color: rebeccapurple;
+const Title = styled.div`
+  font-size: 70px;
+  font-family: 'Bangers', cursive;
+  color: #4c4cda;
+  text-transform: uppercase;
 `
 
 export default function Top(){
   return (
     <TopContainer>
       <Slogan>
-        <DummyRectangle />
+        <Title>
+          Company
+        </Title>
       </Slogan>
     </TopContainer>
   )

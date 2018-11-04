@@ -54,7 +54,6 @@ const ModalContent = styled.div`
 
 	render() {
 		const {modalIsOpen} = this.props.store;
-		console.log(modalIsOpen)
 		return (
 			modalIsOpen ?
 				<ModalOverlay>

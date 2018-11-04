@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react'
 
 import Header from '../header'
 import Modal from '../modal'
+import GlobalStyles from '../../assets/styles/styles'
 
 const LayoutContainer = styled.div`
   background-color: white;
@@ -11,17 +12,11 @@ const LayoutContainer = styled.div`
 `
 @inject('store') @observer
 export default class Layout extends Component {
-  render(){
+  render() {
     const { children } = this.props;
     return (
       <LayoutContainer id="layout">
-        <style global jsx>
-          {`
-            * {
-              box-sizing: border-box;
-            }
-          `}
-        </style>
+        <GlobalStyles />
         <Modal />
         <Header />
         {children}

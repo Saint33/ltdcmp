@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { inject, observer } from 'mobx-react'
 
 import Layout from '../../components/layout'
 import Top from './top'
