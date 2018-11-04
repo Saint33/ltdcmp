@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import Modal from '../components/modal'
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -14,7 +15,6 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {this.props.styleTags}
-          <title>LTDCMP</title>
           <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></link>
         </Head>
         <body style={{
@@ -22,6 +22,7 @@ export default class MyDocument extends Document {
           fontFamily: 'Roboto',
           boxSizing: 'border-box'
         }}>
+          <div id="modal"/>
           <Main />
           <NextScript />
         </body>

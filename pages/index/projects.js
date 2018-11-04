@@ -36,7 +36,6 @@ export default class Projects extends React.Component {
   }
 
   handleScroll = event => {
-    console.log(window.pageYOffset);
     let project1OffsetTop = this.project1.current.getBoundingClientRect().top;
     if(project1OffsetTop < - this.project1.current.offsetHeight / 2){
       this.projects.current.style.backgroundColor = '#374140';

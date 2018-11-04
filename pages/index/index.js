@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import { inject, observer } from 'mobx-react'
 
 import Layout from '../../components/layout'
 import Top from './top'
-import Projects from './projects';
+import Projects from './projects'
 
 const FakeBlock = styled.div`
   height: 100vh;
   padding-top: 60px;
 `
 
-
-class Home extends React.Component {
+export default class Home extends React.Component {
 
   render(){
     return (
@@ -19,10 +19,7 @@ class Home extends React.Component {
         <Top />
         <FakeBlock />
         <Projects />
-
       </Layout>
     )
   }
 }
-
-export default Home;
