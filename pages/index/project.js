@@ -45,11 +45,13 @@ const Description = styled.p`
 `
 
 class Project extends Component {
+  projects = createRef();
   project = createRef();
   info = createRef();
   throttledScrollHandler = throttle(this.handleScroll, 100).bind(this);
 
   componentDidMount() {
+    console.log(this.props);
     document.addEventListener('scroll', this.throttledScrollHandler, false)
   }
 
