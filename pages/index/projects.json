@@ -1,0 +1,20 @@
+[
+  {
+    "image": "/static/mobile.png",
+    "title": "Project 1",
+    "color": "#374140",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis impedit odit earum enim molestias dolorum porro facere dolore alias, id modi cumque magnam quaerat perspiciatis, aliquid doloribus? Maiores, doloremque ipsam!"
+  },
+  {
+    "image": "/static/mobile2.png",
+    "title": "Project 2",
+    "color": "#2A2C2B",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis impedit odit earum enim molestias dolorum porro facere dolore alias, id modi cumque magnam quaerat perspiciatis, aliquid doloribus? Maiores, doloremque ipsam!"
+  },
+  {
+    "image": "/static/mobile2.png",
+    "title": "Project 3",
+    "color": "red",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis impedit odit earum enim molestias dolorum porro facere dolore alias, id modi cumque magnam quaerat perspiciatis, aliquid doloribus? Maiores, doloremque ipsam!"
+  }
+]
