@@ -45,15 +45,16 @@ const Description = styled.p`
 `
 
 class Project extends Component {
-  projects = createRef();
   project = createRef();
   info = createRef();
   throttledScrollHandler = throttle(this.handleScroll, 100).bind(this);
 
   componentDidMount() {
-    console.log(this.props);
+    this.handleScroll();
     document.addEventListener('scroll', this.throttledScrollHandler, false)
   }
+
+
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.throttledScrollHandler, false);
@@ -83,6 +84,7 @@ class Project extends Component {
     const { image, title, description } = this.props;
     return (
       <Container ref={this.project}>
+
         <Image src={image} />
         <Info ref={this.info}>
         <Title>
